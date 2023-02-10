@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bg"
     tools:context=".HomePage">
 
         <TextView
@@ -14,10 +14,11 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:text="Morning, Sudeshna"
-            android:fontFamily="@font/times_new_roman_bold"
+            android:fontFamily="@font/poppins_regular"
             android:textSize="25sp"
             android:letterSpacing="0.02"
-            android:textColor="@color/txt1"
+            android:textFontWeight="600"
+            android:textColor="@color/textblack"
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"/>
 
@@ -27,13 +28,13 @@
             android:layout_height="wrap_content"
             android:text="Here's your News Feed"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/times_new_roman_bold"
+            android:fontFamily="@font/poppins_regular"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nametxt"
             android:textSize="13sp"
+            android:textFontWeight="600"
             android:letterSpacing="0.02"
-            android:textColor="@color/grey"/>
+            android:textColor="@color/textgrey"/>
 
         <TextView
             android:id="@+id/tempsymbol"
@@ -43,10 +44,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/line"
             android:text="\u2103"
-            android:fontFamily="@font/times_new_roman"
-            android:textSize="40sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="35sp"
             android:letterSpacing="0.02"
-            android:textColor="@color/txt1"
+            android:textColor="@color/textblack"
             android:layout_marginEnd="15dp" />
 
         <TextView
@@ -57,10 +58,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/line"
             android:text="20"
-            android:fontFamily="@font/times_new_roman"
-            android:textSize="40sp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="35sp"
             android:letterSpacing="0.02"
-            android:textColor="@color/txt1" />
+            android:textColor="@color/textblack" />
 
 <!--        <TextView-->
 <!--            android:id="@+id/cityname"-->

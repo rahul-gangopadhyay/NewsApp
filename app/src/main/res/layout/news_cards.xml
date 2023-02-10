@@ -5,10 +5,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="10dp"
-    app:cardBackgroundColor="@color/cardbg"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp"
-    app:cardPreventCornerOverlap="false">
+        app:cardBackgroundColor="@color/cardbg"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -43,7 +43,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/news_title"
                 android:text="FTX bankruptcy reveals Tom Brady as one of company’s biggest shareholders - NBC Sports"
-                android:textColor="@color/black"
+                android:textColor="@color/textblack"
+                android:textFontWeight="600"
+                android:fontFamily="@font/poppins_regular"
                 android:textSize="20sp"/>
 
             <TextView
@@ -52,20 +54,29 @@
                 android:id="@+id/news_content"
                 android:text="Tom Brady‘s connection to FTX has resulted in both civil liability and the implosion of his massive equity stake in the company.Via FrontOfficeSports.com, and as originally reported by the New York Post, court documents filed in connection with the FTX bankru…"
                 android:textSize="15sp"
+                android:textColor="@color/contexttext"
+                android:fontFamily="@font/poppins_regular"
+                android:textFontWeight="500"
                 android:layout_marginTop="10dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/news_author"
+                android:textColor="@color/textgrey"
                 android:text="Mike Florio"
                 android:textSize="10sp"
+                android:fontFamily="@font/poppins_regular"
+                android:textFontWeight="400"
                 android:layout_marginTop="10dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/news_time"
+                android:fontFamily="@font/poppins_regular"
+                android:textFontWeight="400"
+                android:textColor="@color/textgrey"
                 android:text="2023-01-12T14:42:00Zl"
                 android:textSize="10sp" />
 

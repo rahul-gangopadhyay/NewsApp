@@ -6,11 +6,11 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="textblack">#FF000000</color>
-    <color name="contexttext">#2C2C2C</color>
+    <color name="textblack">#FFFFFF</color>
+    <color name="contexttext">#C7C6C6</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="bg">#FFFFFFFF</color>
+    <color name="bg">#FF000000</color>
     <color name="grey">#878787</color>
     <color name="textgrey">#878787</color>
-    <color name="cardbg">#D1D1D1</color>
+    <color name="cardbg">#353535</color>
 </resources>

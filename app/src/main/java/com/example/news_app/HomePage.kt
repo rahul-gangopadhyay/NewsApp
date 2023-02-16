@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class HomePage : AppCompatActivity() {
@@ -20,27 +23,33 @@ class HomePage : AppCompatActivity() {
         val recyclerview = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerview.setHasFixedSize(true)
         recyclerview.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL,false)
-
-//        val compSnapHelper: SnapHelper = LinearSnapHelper()
-//        compSnapHelper.attachToRecyclerView(recyclerview)
-
         val mSnapHelper: SnapHelper = PagerSnapHelper()
         mSnapHelper.attachToRecyclerView(recyclerview)
 
-        val data = ArrayList<News>()
-
-        // This loop will create 20 Views containing
-
-        // the image with the count of view
-        for (i in 1..20) {
-            data.add(News(R.drawable.samplepic, "FTX bankruptcy reveals Tom Brady as one of company’s biggest shareholders - NBC Sports", "Tom Brady‘s connection to FTX has resulted in both civil liability and the implosion of his massive equity stake in the company.Via FrontOfficeSports.com, and as originally reported by the New York Post, court documents filed in connection with the FTX bankru…", "Mike Florio", "2023-01-12T14:42:00Zl"))
+        getFilmData { data : List<Article> ->
+            recyclerview.adapter = NewsAdapter(data)
         }
 
-        // This will pass the ArrayList to our Adapter
-        val adapter = NewsAdapter(data)
+    }
 
-        // Setting the Adapter with the recyclerview
-        recyclerview.adapter = adapter
+    private fun getFilmData(callback: (List<Article>) -> Unit){
+        val apiService = RetrofitClient.getRetrofitClient().create(ApiInterface::class.java)
+        val call = apiService.getNewsList()
+        call.enqueue(object: Callback<NewsResponse> {
+//            override fun onResponse(call: Call<FilmRes>, response: Response<FilmRes>) {
+//                if(response.isSuccessful){
+//                    Log.i("Got data", response.body()!!.results[0].title)
+//                }
+//            }
 
+            override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
+                return callback(response.body()!!.articles)
+            }
+
+            override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
+
+            }
+
+        })
     }
 }

@@ -1,7 +1,9 @@
 package com.example.news_app
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +13,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class HomePage : AppCompatActivity() {
+class HomePage : AppCompatActivity(), NewsAdapter.ItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
@@ -27,7 +29,7 @@ class HomePage : AppCompatActivity() {
         mSnapHelper.attachToRecyclerView(recyclerview)
 
         getFilmData { data : List<Article> ->
-            recyclerview.adapter = NewsAdapter(data)
+            recyclerview.adapter = NewsAdapter(data, this)
         }
 
     }
@@ -51,5 +53,12 @@ class HomePage : AppCompatActivity() {
             }
 
         })
+    }
+
+
+    override fun onItemClick(item: Article) {
+        val builder = CustomTabsIntent.Builder()
+        val customTabsIntent = builder.build()
+        customTabsIntent.launchUrl(this, Uri.parse(item.url))
     }
 }

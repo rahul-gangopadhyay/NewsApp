@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="Morning, Sudeshna"
+            android:text="Welcome Back"
             android:fontFamily="@font/poppins_regular"
             android:textSize="25sp"
             android:letterSpacing="0.02"

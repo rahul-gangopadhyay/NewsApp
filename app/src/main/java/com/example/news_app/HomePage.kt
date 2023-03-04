@@ -61,4 +61,8 @@ class HomePage : AppCompatActivity(), NewsAdapter.ItemClickListener {
         val customTabsIntent = builder.build()
         customTabsIntent.launchUrl(this, Uri.parse(item.url))
     }
+
+    override fun onBackPressed() {
+        return
+    }
 }

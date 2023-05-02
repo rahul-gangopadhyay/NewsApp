@@ -31,9 +31,7 @@ class HomePage : AppCompatActivity(), NewsAdapter.ItemClickListener {
         getFilmData { data : List<Article> ->
             recyclerview.adapter = NewsAdapter(data, this)
         }
-
     }
-
     private fun getFilmData(callback: (List<Article>) -> Unit){
         val apiService = RetrofitClient.getRetrofitClient().create(ApiInterface::class.java)
         val call = apiService.getNewsList()
@@ -60,5 +58,9 @@ class HomePage : AppCompatActivity(), NewsAdapter.ItemClickListener {
         val builder = CustomTabsIntent.Builder()
         val customTabsIntent = builder.build()
         customTabsIntent.launchUrl(this, Uri.parse(item.url))
+    }
+
+    override fun onBackPressed() {
+        return
     }
 }
